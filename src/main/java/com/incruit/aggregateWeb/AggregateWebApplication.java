@@ -1,11 +1,18 @@
 package com.incruit.aggregateWeb;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class AggregateWebApplication {
+public class AggregateWebApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(AggregateWebApplication.class);
+	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(AggregateWebApplication.class, args);
