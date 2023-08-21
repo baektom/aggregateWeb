@@ -1,42 +1,43 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const openPopupButton = document.getElementById("openPopupButton");
-//     const closePopupButton = document.getElementById("closePopupButton");
-//     const popup = document.getElementById("popup");
+window.onload = function () {
+    const emailInput = document.getElementById("emailInput");
+    const nameInput = document.getElementById("nameInput");
+    const contactInput = document.getElementById("contactInput");
+    const submitButton = document.getElementById("submitButton");
+    const errorDisplay = document.getElementById("errorDisplay");
+    const agreeCheckbox = document.getElementById("agreeCheckbox");
 
-//     openPopupButton.addEventListener("click", () => {
-//         popup.style.display = "block";
-//     });
+    function validateEmail(email) {
+        const emailPattern =
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(email);
+    }
 
-//     closePopupButton.addEventListener("click", () => {
-//         popup.style.display = "none";
-//     });
+    function validateContact(contact) {
+        const contactPattern = /^010\d{4}\d{4}$/;
+        return contactPattern.test(contact);
+    }
 
-//     popup.style.display = "none";
-// });
+    function updateSubmitButton() {
+        const email = emailInput.value.trim();
+        const contact = contactInput.value.trim();
+        const name = nameInput.value.trim();
 
-document.addEventListener("DOMContentLoaded", function () {
-    const openPopupButton = document.getElementById("openPopupButton");
-    const closePopupButton = document.getElementById("closePopupButton");
-    const popup = document.getElementById("popup");
+        const isValidEmail = validateEmail(email);
+        const isValidContact = validateContact(contact);
+        const isCheckedAgree = agreeCheckbox.checked;
 
-    openPopupButton.addEventListener("click", (event) => {
-        event.stopPropagation();
-        popup.style.display = "block";
-
-        document.addEventListener("click", outsideClickHandler);
-    });
-
-    closePopupButton.addEventListener("click", () => {
-        popup.style.display = "none";
-        document.removeEventListener("click", outsideClickHandler);
-    });
-
-    popup.style.display = "none";
-
-    function outsideClickHandler(event) {
-        if (!popup.contains(event.target) && event.target !== openPopupButton) {
-            popup.style.display = "none";
-            document.removeEventListener("click", outsideClickHandler);
+        if (isValidEmail && isValidContact && name !== "" &&isCheckedAgree) {
+            submitButton.disabled = false;
+            errorDisplay.textContent = "";
+        } else {
+            submitButton.disabled = true;
+            errorDisplay.textContent =
+                "필수 정보를 확인해주세요.";
         }
     }
-});
+
+    emailInput.addEventListener("input", updateSubmitButton);
+    contactInput.addEventListener("input", updateSubmitButton);
+    nameInput.addEventListener("input", updateSubmitButton);
+    agreeCheckbox.addEventListener("change", updateSubmitButton);
+};
