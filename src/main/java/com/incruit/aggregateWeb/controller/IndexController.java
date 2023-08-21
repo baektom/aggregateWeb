@@ -23,14 +23,14 @@ public class IndexController {
         return "qna";
     }
 
-    @GetMapping("/About_us")
+    @GetMapping("/about_us")
     public String renderAboutUs(){
         return "about_us";
     }
 
-    @GetMapping("/search")
+    /*@GetMapping("/search")
     public String renderQnASearchForm(Model model, QnASearchDTO qnaDTO){
         return qnaSearchService.showQnAList(model,qnaDTO);
-    }
+    }*/
 
 }
