@@ -18,16 +18,15 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/QNA")
+    @GetMapping("/qna")
     public String renderQnAForm(){
-        return "QNA";
+        return "qna";
     }
 
     @GetMapping("/About_us")
     public String renderAboutUs(){
-        return "About_us";
+        return "about_us";
     }
-
 
     @GetMapping("/search")
     public String renderQnASearchForm(Model model, QnASearchDTO qnaDTO){
