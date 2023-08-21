@@ -1,0 +1,80 @@
+/* ! mobile */
+@media screen and (max-width:767px){
+    footer{
+        max-width: 1920px; width: 100%; margin: 0 auto; background-color: #84B8E8;
+        margin-top: 40px;
+    }
+    footer div{
+       max-width: 700px; width: 100%; margin: 0 auto; 
+    }
+    footer div:first-child{
+        border-bottom: 1px solid #fff; margin-bottom: 20px; text-align: center;
+    }
+    footer div:first-child a img{
+        width: 90px;
+    }
+    footer div:last-child{
+        width: 100%; padding-bottom: 30px;
+    }
+    footer div:last-child address{
+        color: #fff; font-size: 16px; line-height: 30px; text-align: center;
+    }
+    footer div:last-child address a{
+        color: #fff;
+    }
+}
+
+
+/* ! tablet */
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    footer{
+        max-width: 1920px; width: 100%; margin: 0 auto; background-color: #84B8E8;
+        margin-top: 40px;
+    }
+    footer div{
+       max-width: 700px; width: 100%; margin: 0 auto; 
+    }
+    footer div:first-child{
+        border-bottom: 1px solid #fff; margin-bottom: 20px; text-align: center;
+    }
+    footer div:first-child a img{
+        width: 150px;
+    }
+    footer div:last-child{
+        width: 100%; padding-bottom: 30px;
+    }
+    footer div:last-child address{
+        color: #fff; font-size: 18px; line-height: 30px; text-align: center;
+    }
+    footer div:last-child address a{
+        color: #fff;
+    }
+}
+
+
+/* ! desktop */
+@media screen and (min-width: 1280px){
+    footer{
+        max-width: 1920px; width: 100%; margin: 0 auto; background-color: #84B8E8;
+        margin-top: 40px;
+    }
+    footer div{
+       max-width: 1440px; width: 100%; margin: 0 auto; text-align: center;
+    }
+    footer div:first-child{
+        border-bottom: 1px solid #fff; margin-bottom: 20px; vertical-align: middle;
+    }
+    footer div:first-child a img{
+        width: 150px;
+    }
+    footer div:last-child{
+        width: 100%; padding-bottom: 30px;
+    }
+    footer div:last-child address{
+        color: #fff; font-size: 20px; line-height: 30px; text-align: center;
+    }
+    footer div:last-child address a{
+        color: #fff;
+    }
+}
+

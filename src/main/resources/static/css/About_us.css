@@ -1,0 +1,320 @@
+@import url(reset.css);
+@import url(index.css);
+
+
+/*! mpobile*/
+@media screen and (max-width:767px){
+    .header{
+        margin-bottom: 60px;
+    }
+    .about_h2{
+        font-size: 50px; margin-bottom: 70px;
+    }
+    .about_Section, .mapSection, .newsSection{
+        max-width: 767px; width: 100%; margin: 0 auto;
+    }
+    .tabMenu{
+        text-align: center;
+    }
+    .tabMenu ul li{
+        font-size: 35px; margin-bottom: 50px; padding-bottom: 20px;  border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
+    .tabMenu ul li.active{
+        font-weight: bold;
+    }
+    .greeSection, .mapSection, .newsSection{
+        display: none;
+    }
+    .greeSection.active{
+        display: block;
+    }
+    .greeSection div:first-of-type{
+        width: 100%; text-align: center;
+    }
+    .greeSection div:first-of-type h3{
+        font-size: 30px; font-weight: bold; margin-bottom: 30px;
+    }
+    .greeSection div:first-of-type span{
+        border-bottom: 3px solid #555; width: 20px; margin-bottom: 30px;
+        display: block;
+    }
+    .greeSection div:first-of-type p{
+        font-size: 25px; margin-bottom: 30px;
+    }
+    .greeSection div:first-of-type p:first-of-type{
+        margin-bottom: 10px;
+    }
+    .greeSection div:last-of-type{
+        margin: 0 3% 60px; width: 94%; font-size: 25px;
+    }
+    .greeSection div:last-of-type p{
+        margin-bottom: 22px; font-size: 24px;
+    }
+    .mapSection #map{
+        height: 515px; width: 100%; margin-bottom: 20px;
+    }
+    .mapSection div:last-of-type{
+        margin-bottom: 60px;
+    }
+    .mapSection div:last-of-type p:first-child{
+        font-size: 20px; color: rgb(113, 138, 23); font-weight: bold; margin-bottom: 20px;
+    }
+    .mapSection div:last-of-type p:last-child{
+        font-size: 20px; color: green; font-weight: bold;
+    }
+
+    .mapSection.active{
+        display: block;
+    }
+
+    .newsSection{
+        width: 100%; display: none;
+    }
+    .newsSection a{
+        max-width: 1400px; width: 100%; border-bottom: 1px solid #9b9b9b;
+        display: block;
+    }
+    .newsSection a div:first-of-type{
+        width: 100%;text-align: center;
+    }
+    .newsSection a div:first-of-type img{
+        width: 450px;
+    }
+    .newsSection a div:last-of-type{
+        width: 100%;
+    }
+    .newsSection a div:last-of-type h3{
+        font-size: 25px; color: #000; font-weight: bold; margin-bottom: 10px;
+        line-height: 40px; text-align: center;
+    }
+    .newsSection a div:last-of-type p{
+        color: rgb(40, 40, 40); font-size: 16px; text-align: center;
+        font-weight: 400; line-height: 1.8; margin-bottom: 20px;
+        display: -webkit-box; -webkit-box-orient: vertical;
+        overflow-wrap: break-word; text-overflow: ellipsis;
+        overflow: hidden;-webkit-line-clamp: 3; height: 80px;
+    }
+    .newsSection a div:last-of-type span{
+        padding-bottom: 20px; display: block; text-align: center; font-size: 18px;
+    }
+    .newsSection.active{
+        display: block;
+    }
+}
+
+/*! tablet*/
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    .header{
+        margin-bottom: 60px;
+    }
+    .about_h2{
+        font-size: 60px; margin-bottom: 70px;
+    }
+    .about_Section, .mapSection, .newsSection{
+        max-width: 800px; width: 100%; margin: 0 auto;
+    }
+    .about_Section::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    .tabMenu{
+        width: 100%; text-align: center;
+    }
+    .tabMenu ul li{
+        font-size: 30px; margin-bottom: 50px; padding-bottom: 20px;  border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
+    .tabMenu ul li.active{
+        font-weight: bold;
+    }
+    .greeSection, .mapSection, .newsSection{
+        display: none;
+    }
+    .greeSection.active{
+        display: block;
+    }
+    .greeSection div{
+        float: left;
+    }
+    .greeSection div:first-of-type{
+        width: 30%;
+    }
+    .greeSection div:first-of-type h3{
+        font-size: 35px; font-weight: bold; margin-bottom: 30px;
+    }
+    .greeSection div:first-of-type span{
+        border-bottom: 3px solid #555; width: 20px; margin-bottom: 30px;
+        display: block;
+    }
+    .greeSection div:first-of-type p{
+        font-size: 30px;
+    }
+    .greeSection div:first-of-type p:first-of-type{
+        margin-bottom: 30px;
+    }
+    .greeSection div:last-of-type{
+        margin-left: 3%; width: 67%; font-size: 20px; margin-bottom: 60px;
+    }
+    .greeSection div:last-of-type p:not(:last-of-type){
+        margin-bottom: 22px;
+    }
+    .mapSection #map{
+        height: 515px;  margin-bottom: 20px;
+    }
+
+    .mapSection div:last-of-type{
+        margin-bottom: 60px;
+    }
+    .mapSection div:last-of-type p:first-child{
+        font-size: 20px; color: rgb(113, 138, 23); font-weight: bold; margin-bottom: 20px;
+    }
+    .mapSection div:last-of-type p:last-child{
+        font-size: 20px; color: green; font-weight: bold;
+    }
+
+    .mapSection.active{
+        display: block;
+    }
+
+    .newsSection{
+        display: none; max-width: 1400px; width: 98%;  margin: 0 auto;
+    }
+    .newsSection a{
+        width: 100%; border-bottom: 1px solid #9b9b9b;
+        display: block;
+    }
+    .newsSection a div:first-of-type{
+        width: 100%;text-align: center;
+    }
+    .newsSection a div:first-of-type img{
+        width: 450px;
+    }
+    .newsSection a div:last-of-type{
+        width: 100%;
+    }
+    .newsSection a div:last-of-type h3{
+        font-size: 25px; color: #000; font-weight: bold; margin-bottom: 10px;
+        line-height: 40px; text-align: center;
+    }
+    .newsSection a div:last-of-type p{
+        color: rgb(40, 40, 40); font-size: 16px; text-align: center;
+        font-weight: 400; line-height: 1.8; margin-bottom: 20px;
+        display: -webkit-box; -webkit-box-orient: vertical;
+        overflow-wrap: break-word; text-overflow: ellipsis;
+        overflow: hidden;-webkit-line-clamp: 3; height: 80px;
+    }
+    .newsSection a div:last-of-type span{
+        padding-bottom: 20px; display: block; text-align: center; font-size: 18px;
+    }
+    .newsSection.active{
+        display: block;
+    }
+}
+
+/*! desktop*/
+@media screen and (min-width: 1280px){
+    .header{
+        margin-bottom: 60px;
+    }
+    .about_h2{
+        font-size: 60px; margin-bottom: 70px;
+    }
+    .about_Section, .mapSection, .newsSection{
+        max-width: 1800px; width: 100%; margin: 0 auto;
+    }
+    .about_Section::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    .tabMenu{
+        width: 20%; float: left; margin-right: 5%;
+    }
+    .tabMenu ul li{
+        font-size: 40px; margin-bottom: 50px; padding-bottom: 20px;  border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
+    .tabMenu ul li.active{
+        font-weight: bold;
+    }
+    .greeSection, .mapSection, .newsSection{
+        width: 75%; float: left; display: none;
+    }
+    .greeSection.active{
+        display: block;
+    }
+    .greeSection div{
+        float: left;
+    }
+    .greeSection div:first-of-type{
+        width: 30%;
+    }
+    .greeSection div:first-of-type h3{
+        font-size: 40px; font-weight: bold; margin-bottom: 30px;
+    }
+    .greeSection div:first-of-type span{
+        border-bottom: 3px solid #555; width: 20px; margin-bottom: 30px;
+        display: block;
+    }
+    .greeSection div:first-of-type p{
+        font-size: 30px;
+    }
+    .greeSection div:first-of-type p:first-of-type{
+        margin-bottom: 30px;
+    }
+    .greeSection div:last-of-type{
+        margin-left: 3%; width: 67%; font-size: 25px;
+    }
+    .greeSection div:last-of-type p:not(:last-of-type){
+        margin-bottom: 22px;
+    }
+    #map{
+        height: 515px; margin-bottom: 20px;
+    }
+    .mapSection div:last-of-type{
+        margin-bottom: 60px;
+    }
+    .mapSection div:last-of-type p:first-child{
+        font-size: 20px; color: rgb(113, 138, 23); font-weight: bold; margin-bottom: 20px;
+    }
+    .mapSection div:last-of-type p:last-child{
+        font-size: 20px; color: green; font-weight: bold;
+    }
+
+    .mapSection.active{
+        display: block;
+    }
+
+    .newsSection{
+        width: 75%; display: none;
+    }
+    .newsSection a{
+        max-width: 1400px; width: 100%; border-top: 1px solid #a1a1a1;
+        display: block; padding: 30px 0;
+    }
+    .newsSection a::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    .newsSection a div:first-of-type{
+        float: left; width: 35%;
+    }
+    .newsSection a div:first-of-type img{
+        width: 340px;
+    }
+    .newsSection a div:last-of-type{
+        float: left; width: 64%; margin-left: 9px;
+    }
+    .newsSection a div:last-of-type h3{
+        font-size: 30px; color: #000; font-weight: bold; margin-bottom: 10px;
+        line-height: 40px;
+    }
+    .newsSection a div:last-of-type p{
+        color: rgb(40, 40, 40); font-size: 16px;
+        font-weight: 400; line-height: 1.8; margin-bottom: 20px;
+        display: -webkit-box; -webkit-box-orient: vertical;
+        overflow-wrap: break-word; text-overflow: ellipsis;
+        overflow: hidden;-webkit-line-clamp: 3; height: 80px;
+    }
+    .newsSection.active{
+        display: block;
+    }
+}
+
