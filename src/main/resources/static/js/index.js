@@ -99,7 +99,7 @@ function navigateTo(page) {
   // 페이지 전환 로직 구현
   if (page === "메인") {
     // 홈 페이지로 이동
-    window.location.href = "index.html";
+    window.location.href = "/";
   } else if (page === "체험하기") {
     window.location.href = "https://m.worknsales.com";
   } 
