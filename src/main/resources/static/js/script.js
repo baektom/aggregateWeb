@@ -99,9 +99,43 @@ function navigateTo(page) {
   // 페이지 전환 로직 구현
   if (page === "메인") {
     // 홈 페이지로 이동
-    window.location.href = "/";
+    window.location.href = "index.html";
   } else if (page === "체험하기") {
     window.location.href = "https://m.worknsales.com";
   } 
 
 }
+
+
+const swiper = new Swiper(".swiper", {
+  loop: false, // 반복
+
+  effect: "fade",
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  autoplay: {
+    // delay: 3000, // 3초마다 페이지 이동
+    disableOnInteraction: false,
+  },
+});
+// AOS 애니메이션
+// AOS.init();
+
+window.addEventListener("DOMContentLoaded", () => {
+  const bannerBottom = document.querySelector(".bannerBottom");
+  const banner = document.querySelector(".banner");
+
+  if (bannerBottom && banner) {
+    banner.appendChild(bannerBottom); // .bannerBottom 요소를 .banner 안으로 이동
+  }
+});

@@ -42,20 +42,6 @@ header {
     align-items: center;
     gap: 10px;
     flex-direction: row-reverse;
-    position: relative;
-}
-
-.result-box {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 80%; /* 검색 바 아래에 위치 */
-    left: 0;
-    background-color: white;
-    border: 1px solid #d1cfcf;
-    border-radius: 10px;
-    width: 85%;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 2; /* 검색 결과가 위에 표시되도록 설정 */
 }
 
 .search span {

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class IndexController {
+
     private final QnASearchService qnaSearchService;
 
     @GetMapping("/")
@@ -17,7 +18,7 @@ public class IndexController {
         return "index";
     }
 
-     @GetMapping("/QNA")
+    @GetMapping("/QNA")
     public String renderQnAForm(){
         return "QNA";
     }
@@ -32,6 +33,5 @@ public class IndexController {
     public String renderQnASearchForm(Model model, QnASearchDTO qnaDTO){
         return qnaSearchService.showQnAList(model,qnaDTO);
     }
-
 
 }
