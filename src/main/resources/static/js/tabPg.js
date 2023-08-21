@@ -17,5 +17,6 @@ function tabpageJS(tabBtn,tabPg){
        
         $(tabPg).removeClass('active');
         $('#' + $(this).attr('data-tab')).addClass('active')
+        map.relayout()
     });
 }

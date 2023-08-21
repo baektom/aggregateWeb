@@ -24,7 +24,7 @@
         font-weight: bold;
     }
     .greeSection, .mapSection, .newsSection{
-         display: none;
+        display: none;
     }
     .greeSection.active{
         display: block;
@@ -63,11 +63,11 @@
     .mapSection div:last-of-type p:last-child{
         font-size: 20px; color: green; font-weight: bold;
     }
-    
+
     .mapSection.active{
         display: block;
     }
-    
+
     .newsSection{
         width: 100%; display: none;
     }
@@ -128,7 +128,7 @@
         font-weight: bold;
     }
     .greeSection, .mapSection, .newsSection{
-         display: none;
+        display: none;
     }
     .greeSection.active{
         display: block;
@@ -159,9 +159,9 @@
         margin-bottom: 22px;
     }
     .mapSection #map{
-        height: 515px; width: 100%; margin-bottom: 20px;
+        height: 515px;  margin-bottom: 20px;
     }
-      
+
     .mapSection div:last-of-type{
         margin-bottom: 60px;
     }
@@ -171,11 +171,11 @@
     .mapSection div:last-of-type p:last-child{
         font-size: 20px; color: green; font-weight: bold;
     }
-    
+
     .mapSection.active{
         display: block;
     }
-    
+
     .newsSection{
         display: none; max-width: 1400px; width: 98%;  margin: 0 auto;
     }
@@ -236,7 +236,7 @@
         font-weight: bold;
     }
     .greeSection, .mapSection, .newsSection{
-        width: 70%; float: left; display: none;
+        width: 75%; float: left; display: none;
     }
     .greeSection.active{
         display: block;
@@ -267,7 +267,7 @@
         margin-bottom: 22px;
     }
     #map{
-        height: 515px; width: 100%; margin-bottom: 20px;
+        height: 515px; margin-bottom: 20px;
     }
     .mapSection div:last-of-type{
         margin-bottom: 60px;
@@ -278,17 +278,17 @@
     .mapSection div:last-of-type p:last-child{
         font-size: 20px; color: green; font-weight: bold;
     }
-    
+
     .mapSection.active{
         display: block;
     }
-    
+
     .newsSection{
-        width: 70%; display: none;
+        width: 75%; display: none;
     }
     .newsSection a{
         max-width: 1400px; width: 100%; border-top: 1px solid #a1a1a1;
-        display: block; padding: 30px 0; 
+        display: block; padding: 30px 0;
     }
     .newsSection a::after{
         display: block; content: ''; visibility: hidden; clear: both;
@@ -317,5 +317,4 @@
         display: block;
     }
 }
-
 

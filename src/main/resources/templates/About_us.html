@@ -1,214 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/tabPg.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link rel="stylesheet" href="css/About_us.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <!-- 구글 아이콘 -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <!-- 스와이퍼 라이브러리 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <!-- AOS 라이브러리 -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <title>Document</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- 헤드 라인 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/about_us.css">
+<th:block th:replace="includes/head :: headFragment"></th:block>
+
+
+
 <body>
-  <header>
-    <div class="inner">
-        <h1 class="logo" onclick="navigateTo('메인')">
-            <img src="images/logo.png" alt="로고" />
-        </h1>
-        <div class="search">
-            <span class="material-symbols-outlined" id="micIcon">mic</span>
-            <span class="material-symbols-outlined" id="searchIcon">search</span>
-            <input type="text" id="searchBar" placeholder="검색어를 입력하세요"/>
+<!-- 헤더 라인 -->
+<th:block th:replace="includes/header :: headerFragment"></th:block>
+<!-- 메인 라인 -->
+<section class="about_Section">
+    <h2 class="about_h2">회사소개</h2>
+    <div class="tabMenu">
+        <ul>
+            <li class="tabBtn active" data-tab="greetings">인사말</li>
+            <li class="tabBtn" data-tab="waytocome">오시는 길</li>
+            <li class="tabBtn" data-tab="news">보도자료</li>
+        </ul>
+    </div>
+
+    <div id="greetings" class="greeSection tabPg active">
+        <div>
+            <h3>주식회사 기원테크</h3>
+            <span></span>
+            <p>설립일</p>
+            <p>1994.06.09</p>
         </div>
-        <!-- 음성 인식 중 알림 -->
-        <div id="voiceNotification" class="voice-notification">
-            음성 인식 중...
-        </div>
-        <div class="container">
-            <div class="menu-button" id="menuButton">
-                <span class="material-symbols-outlined"> menu </span>
-            </div>
-            <div class="side-menu" id="sideMenu">
-                <div class="close-button">
-                    <span id="closeButton">&times;</span>
-                </div>
-                <ul>
-                    <ul>
-                        <li>
-                            <p>회사소개</p>
-                            <div class="accordion-content">
-                                <a href="About_us.html">인사말</a>
-                                <a href="About_us.html">오시는 길</a>
-                                <a href="About_us.html">보도자료</a>
-                            </div>
-                        </li>
-                        <li>
-                            <p>제품소개</p>
-                            <div class="accordion-content">
-                                <a href="#">기원골재 소개(특징,장점,동영상)</a>
-                                <a href="#">구축사례(고객사)</a>
-                            </div>
-                        </li>
-                        <li>
-                            <p>고객지원</p>
-                            <div class="accordion-content">
-                                <a href="#">문의 글 남기기</a>
-                                <a href="#">전화 상담</a>
-                                <a href="#">자주 묻는 질문</a>
-                            </div>
-                        </li>
-                    </ul>
-                </ul>
-            </div>
+        <div>
+            <P>대한민국, 더 나아가 세계 시장의 Global Standard를 제시하는 IT업계 Leader로 성장한 기원테크는</P>
+            <p>다양한 경험과 기원테크만의 기술(KIWON-TECHNOLOGY)을 토대로</p>
+            <p>모두가 보다 안전하고, 편리한 비즈니스 성장의 발판을 갖출 수 있도록 합니다.</p>
+            <p>작은 간위의 업무부터 비즈니스 성장의 순간까지 모두를 아우룰 수 있는 혁신적인 IT Solution을 선보이겠습니다.</p>
         </div>
     </div>
-  </header>
 
-    <section class="about_Section">
-        <h2 class="about_h2">회사소개</h2>
-        <div class="tabMenu">
-            <ul>
-                <li class="tabBtn active" data-tab="greetings">인사말</li>
-                <li class="tabBtn" data-tab="waytocome">오시는 길</li>
-                <li class="tabBtn" data-tab="news">보도자료</li>
-            </ul>
+    <div id="waytocome" class="mapSection tabPg">
+        <div id="map" style="width: 100%;"></div>
+        <div>
+            <p>지하철 7호선 남구로역 1번 출구 방면</p>
+            <p>지하철 2호선 구로디지털단지역 2번 출구 방면</p>
         </div>
-    
-        <div id="greetings" class="greeSection tabPg active">
+    </div>
+
+    <div id="news" class="newsSection tabPg">
+        <a href="">
+            <div><img src="images/news1.jpg" alt=""></div>
             <div>
-                <h3>주식회사 기원테크</h3>
-                <span></span>
-                <p>설립일</p>
-                <p>1994.06.09</p>
+                <h3>기원테크, 이메일 통합 보안 솔루션 'EG-Platform(이지플랫폼)' 첫 달 무료 이벤트 실시</h3>
+                <p>이메일 보안 전문기업 (주)기원테크는 랜섬웨어 감염과 정보 유출 문제로 어려움을 겪는 기업을 위해 EG-Platform(이지플랫폼)을 신규 고객에게 첫 달 1개월 무료 체험을
+                    제공한다고 밝혔다.
+                    현재 사용하고 있는 그룹웨어와 연결해 사용할 수 있기 때문에 부담없이 체험해볼 수 있다.
+                    기원테크 이지플랫폼은 수발신 이메일 보안 통합 솔루션으로 스팸 차단, 지능형 APT 차단, 정보 유출 방지 및 감사, 첨부파일 관리로 이루어진 이메일 전구간의 체계적인 보안
+                    시스템을 제공하는 통합 이메일 보안 솔루션이다.
+                    이지플랫폼은 학습형 스팸 필터링으로 기업 맞춤형 스팸 메일 차단이 가능하고 헤더 검사와 유사 도메인 검사를 통한 사기 위변조 메일 차단에 특화되어 신종 랜섬웨어, 정보 유출, 송금
+                    사기를 예방할 수 있다.
+                    그러나 이메일 보안 문제에 대한 중요성을 인식하지 못하거나 어떤 보안 솔루션을 선택하는 것이 좋을지 고민하는 기업은 초기 도입의 진입장벽에 어려움을 느낀다.
+                    기원테크는 수발신 메일 및 첨부파일의 보안을 하나로 해결할 수 있는 이지플랫폼을 개발해 기업이 이메일 보안에 느끼는 진입장벽을 없앴다.
+                    이지플랫폼을 사용하면 고객은 스팸메일로 인한 업무 방해를 받지 않을 수 있고, 유사 도메인이나 해킹된 계정으로부터 수신한 사기 위변조 메일, 악성 코드가 포함된 메일을 차단하여
+                    송금 사기나 신종 랜섬웨어 감염, 내부 정보 유출을 예방할 수 있다. 또한 발신 메일을 통한 정보 유출을 막을 수 있으며 효과적으로 대용량 첨부파일 전송과 첨부파일 관리를 할 수
+                    있다.
+                    기원테크 김기남 이사는 “최근 많은 기업들이 클라우드 베이스의 그룹웨어를 사용하고 있는 점을 노리고 클라우드 공급망을 대상으로 랜섬웨어 공격이 급증하고 있다”며 “이지플랫폼은
+                    기존에 수신한 이메일 정보를 모두 저장하여 헤더 검사, 발신자 진위여부 검사 등을 통한 사기 위-조 메일 검출과, 첨부파일, URL 검사를 통한 악성 행위 검출에 특화되어 있어
+                    이지플랫폼을 통해 이메일로 유입되는 랜섬웨어를 차단할 수 있다”고 말했다.
+                </p>
+                <span>2021.06.15</span>
             </div>
+        </a>
+        <a href="#">
+            <div><img src="" alt=""></div>
             <div>
-                <P>대한민국, 더 나아가 세계 시장의 Global Standard를 제시하는 IT업계 Leader로 성장한 기원테크는</P>
-                <p>다양한 경험과 기원테크만의 기술(KIWON-TECHNOLOGY)을 토대로</p>
-                <p>모두가 보다 안전하고, 편리한 비즈니스 성장의 발판을 갖출 수 있도록 합니다.</p>
-                <p>작은 간위의 업무부터 비즈니스 성장의 순간까지 모두를 아우룰 수 있는 혁신적인 IT Solution을 선보이겠습니다.</p>
-            </div>  
-        </div>
-
-        <div id="waytocome" class="mapSection tabPg">
-            <div id="map" style="width: 100%;"></div>
-            <div>
-                <p>지하철 7호선 남구로역 1번 출구 방면</p>
-                <p>지하철 2호선 구로디지털단지역 2번 출구 방면</p>
+                <h3>제목</h3>
+                <p></p>
+                <span>2021.0.0</span>
             </div>
-        </div>
+        </a>
+        <a href="#">
+            <div><img src="" alt=""></div>
+            <div>
+                <h3>제목</h3>
+                <p></p>
+                <span>2021.0.0</span>
+            </div>
+        </a>
+        <a href="#">
+            <div><img src="" alt=""></div>
+            <div>
+                <h3>제목</h3>
+                <p></p>
+                <span>2021.0.0</span>
+            </div>
+        </a>
+        <a href="#">
+            <div><img src="" alt=""></div>
+            <div>
+                <h3>제목</h3>
+                <p></p>
+                <span>2021.0.0</span>
+            </div>
+        </a>
+    </div>
+</section>
 
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae0ddee23d08b0339839d4f772be4133"></script>
-    <script>
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-        mapOption = { 
-            center: new kakao.maps.LatLng(37.485546, 126.892388), // 지도의 중심좌표
-            level: 3, // 지도의 확대 레벨
-        };
-    
-        var map = new kakao.maps.Map(mapContainer, mapOption);
-    
-        // 마커가 표시될 위치입니다 
-        var markerPosition  = new kakao.maps.LatLng(37.485546, 126.892388); 
-    
-        // 마커를 생성합니다
-        var marker = new kakao.maps.Marker({
-            position: markerPosition
-        });
-    
-        // 마커가 지도 위에 표시되도록 설정합니다
-        marker.setMap(map);
-    
-        var iwContent = '<div><a href="https://www.kiwontech.com" style="text-decoration:none">기원테크</a>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(37.485546, 126.892388); //인포윈도우 표시 위치입니다
-        
-        // 인포윈도우를 생성합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            position : iwPosition, 
-            content : iwContent 
-        });
-
-        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-        infowindow.open(map, marker);
-    </script>
-  
-        <div id="news" class="newsSection tabPg">
-            <a href="">
-                <div><img src="images/news1.jpg" alt=""></div>
-                <div>
-                    <h3>기원테크, 이메일 통합 보안 솔루션 'EG-Platform(이지플랫폼)' 첫 달 무료 이벤트 실시</h3>
-                    <p>이메일 보안 전문기업 (주)기원테크는 랜섬웨어 감염과 정보 유출 문제로 어려움을 겪는 기업을 위해 EG-Platform(이지플랫폼)을 신규 고객에게 첫 달 1개월 무료 체험을 제공한다고 밝혔다.
-                        현재 사용하고 있는 그룹웨어와 연결해 사용할 수 있기 때문에 부담없이 체험해볼 수 있다.
-                        기원테크 이지플랫폼은 수발신 이메일 보안 통합 솔루션으로 스팸 차단, 지능형 APT 차단, 정보 유출 방지 및 감사, 첨부파일 관리로 이루어진 이메일 전구간의 체계적인 보안 시스템을 제공하는 통합 이메일 보안 솔루션이다. 
-                        이지플랫폼은 학습형 스팸 필터링으로 기업 맞춤형 스팸 메일 차단이 가능하고 헤더 검사와 유사 도메인 검사를 통한 사기 위변조 메일 차단에 특화되어 신종 랜섬웨어, 정보 유출, 송금 사기를 예방할 수 있다.
-                        그러나 이메일 보안 문제에 대한 중요성을 인식하지 못하거나 어떤 보안 솔루션을 선택하는 것이 좋을지 고민하는 기업은 초기 도입의 진입장벽에 어려움을 느낀다.
-                        기원테크는 수발신 메일 및 첨부파일의 보안을 하나로 해결할 수 있는 이지플랫폼을 개발해 기업이 이메일 보안에 느끼는 진입장벽을 없앴다.
-                        이지플랫폼을 사용하면 고객은 스팸메일로 인한 업무 방해를 받지 않을 수 있고, 유사 도메인이나 해킹된 계정으로부터 수신한 사기 위변조 메일, 악성 코드가 포함된 메일을 차단하여 송금 사기나 신종 랜섬웨어 감염, 내부 정보 유출을 예방할 수 있다. 또한 발신 메일을 통한 정보 유출을 막을 수 있으며 효과적으로 대용량 첨부파일 전송과 첨부파일 관리를 할 수 있다.
-                        기원테크 김기남 이사는 “최근 많은 기업들이 클라우드 베이스의 그룹웨어를 사용하고 있는 점을 노리고 클라우드 공급망을 대상으로 랜섬웨어 공격이 급증하고 있다”며 “이지플랫폼은 기존에 수신한 이메일 정보를 모두 저장하여 헤더 검사, 발신자 진위여부 검사 등을 통한 사기 위-조 메일 검출과, 첨부파일, URL 검사를 통한 악성 행위 검출에 특화되어 있어 이지플랫폼을 통해 이메일로 유입되는 랜섬웨어를 차단할 수 있다”고 말했다.
-                        </p>
-                    <span>2021.06.15</span>
-                </div> 
-            </a>
-            <a href="#">
-                <div><img src="" alt=""></div>
-                <div>
-                    <h3>제목</h3>
-                    <p></p>
-                    <span>2021.0.0</span>
-                </div>
-            </a>
-            <a href="#">
-                <div><img src="" alt=""></div>
-                <div>
-                    <h3>제목</h3>
-                    <p></p>
-                    <span>2021.0.0</span>
-                </div>
-            </a>
-            <a href="#">
-                <div><img src="" alt=""></div>
-                <div>
-                    <h3>제목</h3>
-                    <p></p>
-                    <span>2021.0.0</span>
-                </div>
-            </a>
-            <a href="#">
-                <div><img src="" alt=""></div>
-                <div>
-                    <h3>제목</h3>
-                    <p></p>
-                    <span>2021.0.0</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!--! 푸터 -->
-    <footer>
-      <div>
-        <a href="https://m.blog.naver.com/kiwontech?categoryNo=31"><img src="images/footer_blog.png" alt="홍보블로그"></a><a href="https://youtu.be/UYOVB-HeA-s"><img src="images/footer_movie_1.png" alt="홍보영상1"></a><a href="https://youtu.be/jfT4asf-23Y"><img src="images/footer_movie_2.png" alt="홍보영상2"></a>
-      </div>
-      <div>
-        <address>
-          주소 : 주）기원테크 | 서울특별시 구로구 디지털로31길 53 이앤씨벤처드림타워5차 509호<br/>
-          메일 : <a href="315@kiwontech.com">315@kiwontech.com</a><br/>
-          대표전화 : <a href="tel:+820260127406">(+82) 02-6012-7406</a>
-        </address>
-      </div>
-    </footer> 
-
-<script src="js/script.js"></script>
-<script></script>
+<!--! 푸터 -->
+<th:block th:replace="includes/footer :: footerFragment"></th:block>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae0ddee23d08b0339839d4f772be4133"></script>
+<script src="js/about_us.js"></script>
+<script src="js/tabPg.js"></script>
 
 </body>
 </html>
