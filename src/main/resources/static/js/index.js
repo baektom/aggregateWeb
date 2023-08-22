@@ -139,23 +139,7 @@ window.addEventListener("DOMContentLoaded", () => {
     banner.appendChild(bannerBottom); // .bannerBottom 요소를 .banner 안으로 이동
   }
 });
-/*
-const dataList = [
-    "사과",
-    "사과 나무",
-    "사과 농장",
-    "사과 바구니",
-    "바나나",
-    "바나나 나무",
-    "바나나 농장",
-    "바나나 포도",
-    "포도",
-    "포도 농장",
-    "포도주",
-];*/
 
-dataList[0]
-dataList[0].question
 
 const $search = document.querySelector("#searchBar");
 const $autoComplete = document.querySelector(".autocomplete");
@@ -168,8 +152,10 @@ const value = $search.value.trim();
 
 // 자동완성 필터링
 const matchDataList = value
-    ? dataList.filter((label) => label.includes(value))
+    ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
     : [];
+
+console.log(matchDataList)
 
 switch (event.keyCode) {
     // UP KEY
