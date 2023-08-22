@@ -28,9 +28,9 @@ public class IndexController {
         return "about_us";
     }
 
-    /*@GetMapping("/search")
+    @GetMapping("/search")
     public String renderQnASearchForm(Model model, QnASearchDTO qnaDTO){
         return qnaSearchService.showQnAList(model,qnaDTO);
-    }*/
+    }
 
 }
