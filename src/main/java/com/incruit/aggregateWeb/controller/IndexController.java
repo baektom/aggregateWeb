@@ -14,7 +14,8 @@ public class IndexController {
     private final QnASearchService qnaSearchService;
 
     @GetMapping("/")
-    public String renderIndex(){
+    public String renderIndex(Model model, QnASearchDTO qnaDTO){
+        qnaSearchService.setQnAList(model, qnaDTO);
         return "index";
     }
 
@@ -24,7 +25,8 @@ public class IndexController {
     }
 
     @GetMapping("/about_us")
-    public String renderAboutUs(){
+    public String renderAboutUs(Model model, QnASearchDTO qnaDTO){
+        qnaSearchService.setQnAList(model, qnaDTO);
         return "about_us";
     }
 

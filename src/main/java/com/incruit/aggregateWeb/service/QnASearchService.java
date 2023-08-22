@@ -21,4 +21,9 @@ public class QnASearchService {
         return "/search";
     }
 
+    public void setQnAList(Model model, QnASearchDTO qnaDTO){
+        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaDTO);
+        model.addAttribute("list",list);
+    }
+
 }
