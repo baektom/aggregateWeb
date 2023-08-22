@@ -55,19 +55,30 @@ header {
     height: 55px;
     font-size: 20px;
     padding: 10px;
-    border: 1px solid #d1cfcf;
+    border: 1px solid rgb(209,207,207);
     border-radius: 10px;
 }
 
-.result-box {
+/* 현재 선택된 검색어 */
+.autocomplete > div.active {
+    background: #e0e5f6;
+    color: #000;
+}
+
+.autocomplete > div {
+    background: #f1f3f499;
+    padding: .2rem .6rem;
+}
+
+.autocomplete {
+    font-size: 35px;
     position: absolute; /* 절대 위치로 설정 */
     top: 80%; /* 검색 바 아래에 위치 */
     left: 0;
     background-color: white;
-    border: 1px solid #d1cfcf;
-    border-radius: 10px;
-    width: 85%;
-    max-height: 200px;
+    border-radius: 7px;
+    width: 84.5%;
+    max-height: 800px;
     overflow-y: auto;
     z-index: 2; /* 검색 결과가 위에 표시되도록 설정 */
 }
@@ -112,7 +123,7 @@ header {
 .banner div {
     flex-flow: column;
     flex: 1;
-    border: 1px solid #adadad;
+    border: 1px solid rgb(173,173,173);
     background: #e8e8e8;
     display: flex;
     justify-content: center;
@@ -362,7 +373,7 @@ iframe {
     .bannerBottom2 {
         display: flex;
         align-items: center;
-        border: 1px solid #adadad;
+        border: 1px solid rgb(173,173,173);
         background: #e8e8e8;
         justify-content: center;
         height: 8vh;
@@ -436,7 +447,7 @@ iframe {
     .bannerBottom2 {
         display: flex;
         align-items: center;
-        border: 1px solid #adadad;
+        border: 1px solid rgb(173,173,173);
         background: #e8e8e8;
         justify-content: center;
         height: 12vh;
