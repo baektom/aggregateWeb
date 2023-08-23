@@ -9,7 +9,7 @@ spring:
     check-template-location : true
   datasource:
     driverClassName : org.mariadb.jdbc.Driver
-    url : jdbc:mariadb://103.251.105.176:3306/kwgoljaedump
+    jdbc-url : jdbc:mariadb://103.251.105.176:3306/kwgoljaedump
     username : kiwonerp
     password : kiki$$9977#
 server:
