@@ -6,7 +6,7 @@ const sideMenu = document.getElementById("sideMenu");
 
 function searchData(value) {
     const matchDataList = value
-        ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
+        ? dataList.filter((label) => label.question.includes(value))
         : [];
 
     if (dataListVisible) {
@@ -186,7 +186,7 @@ $autoComplete.addEventListener("click", (event) => {
         const selectedText = event.target.innerText;
 
         // 클릭한 <div>에 연결된 id 정보 가져오기
-        const selectedId = dataList.find(item => item.question === selectedText).id;
+        const selectedId = event.target.getAttribute("data-id");
 
         // 선택한 데이터를 이용하여 페이지 이동
         const searchResultUrl = `/searchAnswer/${selectedId}`;
@@ -194,14 +194,15 @@ $autoComplete.addEventListener("click", (event) => {
     }
 });
 
+
 const showList = (data, value, nowIndex) => {
     const regex = new RegExp(`(${value})`, "g");
 
     $autoComplete.innerHTML = data
         .map(
-            (label, index) => `
-            <div class='${nowIndex === index ? "active" : ""}' data-id="${dataList[index].id}">
-                ${label.replace(regex, "<mark>$1</mark>")}
+            (item, index) => `
+            <div class='${nowIndex === index ? "active" : ""}' data-id="${item.id}">
+                ${item.question.replace(regex, "<mark>$1</mark>")}
             </div>
         `
         )
