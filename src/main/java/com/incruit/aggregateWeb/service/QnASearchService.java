@@ -19,4 +19,8 @@ public class QnASearchService {
         return list;
     }
 
+    public QnASearchDTO getQnA(int id){
+        return qnaSearchMapper.findQnAData(id);
+    }
+
 }

@@ -8,4 +8,8 @@
         select guardSubIDX as id, subject as question from kiwonsale.tguardsub where guardIDX2 = 4232
     </select>
 
+    <select id="findQnAData" resultType="QnASearchDTO">
+        select subject as question, MemoRem as answer from kiwonsale.tguardsub where guardSubIDX = #{id} AND guardIDX2 = 4232
+    </select>
+
 </mapper>

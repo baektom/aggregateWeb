@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface QnASearchMapper {
     List<QnASearchDTO> findQnASearchList(QnASearchDTO qnaDTO);
+
+    QnASearchDTO findQnAData(int id);
 }
