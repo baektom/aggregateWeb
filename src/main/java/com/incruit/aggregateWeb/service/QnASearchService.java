@@ -14,16 +14,9 @@ public class QnASearchService {
 
     private final QnASearchMapper qnaSearchMapper;
 
-    public String showQnAList(Model model, QnASearchDTO qnaDTO){
-        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaDTO);
-        model.addAttribute("list",list);
-
-        return "/search";
-    }
-
-    public void setQnAList(Model model, QnASearchDTO qnaDTO){
-        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaDTO);
-        model.addAttribute("list",list);
+    public List<QnASearchDTO> getQnAList(QnASearchDTO qnaSearchDTO){
+        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaSearchDTO);
+        return list;
     }
 
 }
