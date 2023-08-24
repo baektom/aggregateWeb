@@ -1,5 +1,7 @@
-package com.incruit.aggregateWeb.controller;
+package com.incruit.aggregateWeb.controller.advice;
 
+import com.incruit.aggregateWeb.controller.AboutUsController;
+import com.incruit.aggregateWeb.controller.IndexController;
 import com.incruit.aggregateWeb.db.dto.QnASearchDTO;
 import com.incruit.aggregateWeb.service.QnASearchService;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
-@ControllerAdvice
+@ControllerAdvice(assignableTypes = {IndexController.class, AboutUsController.class})
 @RequiredArgsConstructor
 public class GlobalControllerAdvice {
 
