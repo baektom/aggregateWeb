@@ -145,59 +145,58 @@ const $search = document.querySelector("#searchBar");
 const $autoComplete = document.querySelector(".autocomplete");
 
 let nowIndex = 0;
+let dataListVisible = false;
 
-$search.onkeyup = (event) => {
-// 검색어
-const value = $search.value.trim();
+console.log(dataList);
 
-// 자동완성 필터링
-const matchDataList = value
-    ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
-    : [];
+document.addEventListener("click", (event) => {
+    if (!$search.contains(event.target)) {
+        dataListVisible = false;
+        $autoComplete.innerHTML = "";
+    }
+});
 
-console.log(matchDataList)
+$search.addEventListener("click", () => {
+    dataListVisible = true;
+    showList(dataList.map(obj => obj.question), "", nowIndex);
+});
 
-switch (event.keyCode) {
-    // UP KEY
-    case 38:
-    nowIndex = Math.max(nowIndex - 1, 0);
-    break;
+$search.addEventListener("keyup", () => {
+    const value = $search.value.trim();
+    const matchDataList = value
+        ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
+        : [];
 
-    // DOWN KEY
-    case 40:
-    nowIndex = Math.min(nowIndex + 1, matchDataList.length - 1);
-    break;
+    if (dataListVisible) {
+        showList(matchDataList, value, nowIndex);
+    }
+});
 
-    // ENTER KEY
-    case 13:
-    document.querySelector("#searchBar").value = matchDataList[nowIndex] || "";
+$autoComplete.addEventListener("click", (event) => {
+    // 클릭한 요소가 <div>인지 확인
+    if (event.target.tagName === "DIV") {
+        // 클릭한 <div>의 내용 가져오기
+        const selectedText = event.target.innerText;
 
-    // 초기화
-    nowIndex = 0;
-    matchDataList.length = 0;
-    break;
+        // 클릭한 <div>에 연결된 id 정보 가져오기
+        const selectedId = dataList.find(item => item.question === selectedText).id;
 
-    // 그외 다시 초기화
-    default:
-    nowIndex = 0;
-    break;
-}
-
-// 리스트 보여주기
-showList(matchDataList, value, nowIndex);
-};
+        // 선택한 데이터를 이용하여 페이지 이동
+        const searchResultUrl = `/searchAnswer/${selectedId}`;
+        window.location.href = searchResultUrl;
+    }
+});
 
 const showList = (data, value, nowIndex) => {
-// 정규식으로 변환
-const regex = new RegExp(`(${value})`, "g");
+    const regex = new RegExp(`(${value})`, "g");
 
-$autoComplete.innerHTML = data
-    .map(
-    (label, index) => `
-    <div class='${nowIndex === index ? "active" : ""}'>
-        ${label.replace(regex, "<mark>$1</mark>")}
-    </div>
-    `
-    )
-    .join("");
+    $autoComplete.innerHTML = data
+        .map(
+            (label, index) => `
+            <div class='${nowIndex === index ? "active" : ""}' data-id="${dataList[index].id}">
+                ${label.replace(regex, "<mark>$1</mark>")}
+            </div>
+        `
+        )
+        .join("");
 };
