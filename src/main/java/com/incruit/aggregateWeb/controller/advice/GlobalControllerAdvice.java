@@ -17,7 +17,7 @@ public class GlobalControllerAdvice {
     private final QnASearchService qnaSearchService;
 
     @ModelAttribute("list")
-    public List<QnASearchDTO> addCommonData(QnASearchDTO qnaSearchDTO) {
-        return qnaSearchService.getQnAList(qnaSearchDTO);
+    public List<QnASearchDTO> addCommonData() {
+        return qnaSearchService.getQnAList();
     }
 }

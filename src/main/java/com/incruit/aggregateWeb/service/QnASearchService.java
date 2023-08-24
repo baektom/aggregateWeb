@@ -14,8 +14,8 @@ public class QnASearchService {
 
     private final QnASearchMapper qnaSearchMapper;
 
-    public List<QnASearchDTO> getQnAList(QnASearchDTO qnaSearchDTO){
-        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaSearchDTO);
+    public List<QnASearchDTO> getQnAList(){
+        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList();
         return list;
     }
 
