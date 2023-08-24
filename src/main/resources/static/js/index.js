@@ -4,6 +4,16 @@ const menuButton = document.getElementById("menuButton");
 const closeButton = document.getElementById("closeButton");
 const sideMenu = document.getElementById("sideMenu");
 
+function searchData(value) {
+    const matchDataList = value
+        ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
+        : [];
+
+    if (dataListVisible) {
+        showList(matchDataList, value, nowIndex);
+    }
+}
+
 menuButton.addEventListener("click", () => {
   sideMenu.style.width = "50%";
 });
@@ -40,6 +50,7 @@ recognition.continuous = false;
 recognition.interimResults = true;
 
 recognition.onstart = () => {
+  searchBar.click();
   console.log("음성 인식 시작");
   showVoiceNotification("음성 인식 중...");
 };
@@ -54,6 +65,7 @@ recognition.onresult = (event) => {
   console.log("인식된 문장:", result);
 
   searchBar.value = result; // 음성 인식 결과를 검색바에 표시
+  searchData(result);
   performSearch(); // 검색 기능 실행
 };
 
@@ -161,15 +173,10 @@ $search.addEventListener("click", () => {
     showList(dataList.map(obj => obj.question), "", nowIndex);
 });
 
-$search.addEventListener("keyup", () => {
-    const value = $search.value.trim();
-    const matchDataList = value
-        ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
-        : [];
 
-    if (dataListVisible) {
-        showList(matchDataList, value, nowIndex);
-    }
+
+$search.addEventListener("keyup", () => {
+    searchData($search.value.trim());
 });
 
 $autoComplete.addEventListener("click", (event) => {
