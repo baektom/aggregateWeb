@@ -1,33 +1,3 @@
-/* 사이드 메뉴 */
-
-const menuButton = document.getElementById("menuButton");
-const closeButton = document.getElementById("closeButton");
-const sideMenu = document.getElementById("sideMenu");
-
-menuButton.addEventListener("click", () => {
-  sideMenu.style.width = "50%";
-});
-
-closeButton.addEventListener("click", () => {
-  sideMenu.style.width = "0";
-});
-/* 사이드 메뉴 아코디언*/
-
-const accordionContents = document.querySelectorAll(".accordion-content");
-
-document.querySelectorAll("li").forEach((li, index) => {
-  li.addEventListener("click", () => {
-    if (accordionContents[index].style.display === "block") {
-      accordionContents[index].style.display = "none";
-    } else {
-      accordionContents.forEach((content) => {
-        content.style.display = "none";
-      });
-      accordionContents[index].style.display = "block";
-    }
-  });
-});
-
 /* 검색 기능 및 음성인식 */
 
 // 음성 인식 기능
@@ -40,6 +10,7 @@ recognition.continuous = false;
 recognition.interimResults = true;
 
 recognition.onstart = () => {
+  searchBar.click();
   console.log("음성 인식 시작");
   showVoiceNotification("음성 인식 중...");
 };
@@ -54,6 +25,7 @@ recognition.onresult = (event) => {
   console.log("인식된 문장:", result);
 
   searchBar.value = result; // 음성 인식 결과를 검색바에 표시
+  searchData(result);
   performSearch(); // 검색 기능 실행
 };
 
@@ -81,7 +53,6 @@ searchBar.addEventListener("keyup", (event) => {
   }
 });
 
-// 검색 아이콘 클릭 이벤트 처리
 document.getElementById("searchIcon").addEventListener("click", performSearch);
 
 // 음성 인식 중 알림 표시 함수
@@ -145,59 +116,65 @@ const $search = document.querySelector("#searchBar");
 const $autoComplete = document.querySelector(".autocomplete");
 
 let nowIndex = 0;
+let dataListVisible = false;
 
-$search.onkeyup = (event) => {
-// 검색어
-const value = $search.value.trim();
+console.log(dataList);
 
-// 자동완성 필터링
-const matchDataList = value
-    ? dataList.filter((label) => label.question.includes(value)).map((obj) => obj.question)
-    : [];
+document.addEventListener("click", (event) => {
+    if (!$search.contains(event.target)) {
+        dataListVisible = false;
+        $autoComplete.innerHTML = "";
+    }
+});
 
-console.log(matchDataList)
+$search.addEventListener("click", () => {
+    dataListVisible = true;
+    showList(dataList, "", nowIndex);
+    //showList(dataList.map(obj => obj, "", nowIndex));
 
-switch (event.keyCode) {
-    // UP KEY
-    case 38:
-    nowIndex = Math.max(nowIndex - 1, 0);
-    break;
+});
 
-    // DOWN KEY
-    case 40:
-    nowIndex = Math.min(nowIndex + 1, matchDataList.length - 1);
-    break;
 
-    // ENTER KEY
-    case 13:
-    document.querySelector("#searchBar").value = matchDataList[nowIndex] || "";
 
-    // 초기화
-    nowIndex = 0;
-    matchDataList.length = 0;
-    break;
+$search.addEventListener("keyup", () => {
+    searchData($search.value.trim());
+});
 
-    // 그외 다시 초기화
-    default:
-    nowIndex = 0;
-    break;
+$autoComplete.addEventListener("click", (event) => {
+    // 클릭한 요소가 <div>인지 확인
+    if (event.target.tagName === "DIV") {
+        // 클릭한 <div>의 내용 가져오기
+        const selectedText = event.target.innerText;
+
+        // 클릭한 <div>에 연결된 id 정보 가져오기
+        const selectedId = event.target.getAttribute("data-id");
+
+        // 선택한 데이터를 이용하여 페이지 이동
+        const searchResultUrl = `/searchAnswer/${selectedId}`;
+        window.location.href = searchResultUrl;
+    }
+});
+
+function searchData(value) {
+    const matchDataList = value
+        ? dataList.filter((label) => label.question.includes(value))
+        : [];
+
+    if (dataListVisible) {
+        showList(matchDataList, value, nowIndex);
+    }
 }
 
-// 리스트 보여주기
-showList(matchDataList, value, nowIndex);
-};
-
 const showList = (data, value, nowIndex) => {
-// 정규식으로 변환
-const regex = new RegExp(`(${value})`, "g");
+    const regex = new RegExp(`(${value})`, "g");
 
-$autoComplete.innerHTML = data
-    .map(
-    (label, index) => `
-    <div class='${nowIndex === index ? "active" : ""}'>
-        ${label.replace(regex, "<mark>$1</mark>")}
-    </div>
-    `
-    )
-    .join("");
+    $autoComplete.innerHTML = data
+        .map(
+            (item, index) => `
+            <div class='${nowIndex === index ? "active" : ""}' data-id="${item.id}">
+                ${item.question.replace(regex, "<mark>$1</mark>")}
+            </div>
+        `
+        )
+        .join("");
 };

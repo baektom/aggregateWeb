@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="popUpFragment">
+    <article class="popup" id="popup">
+        <section class="main-popup">
+            <h2 class="title">
+                문의 사항
+                <img
+                        class="backTap"
+                        src="images/close.png"
+                        alt="뒤로가기"
+                />
+            </h2>
+            <br/>
+            <p class="subtitle">
+                궁금하신 사항을 문의해주시면 친절하게 답해드리겠습니다.
+            </p>
+            <p class="subtitle2">* 필수 입력</p>
+            <section>
+                <ul>
+                    <li>
+                        기업명
+                        <input
+                                type="text"
+                                id="companyInput"
+                                placeholder="기업명을 작성해주세요"
+                        />
+                    </li>
+                    <li>
+                        이메일 주소 <span style="color: red">*</span>
+                        <input
+                                type="text"
+                                id="emailInput"
+                                placeholder="받으실 이메일의 주소를 입력해주세요"
+                        />
+                    </li>
+                    <li>
+                        이름/직책 <span style="color: red">*</span>
+                        <input
+                                type="text"
+                                id="nameInput"
+                                placeholder="본인의 이름과 직책을 작성해주세요"
+                        />
+                    </li>
+                    <li>
+                        연락처 <span style="color: red">*</span>
+                        <input
+                                type="text"
+                                id="contactInput"
+                                placeholder="연락받을 연락처를 입력해주세요(하이픈 제외)"
+                        />
+                    </li>
+                    <li class="error" id="errorDisplay1"></li>
+                </ul>
+                <textarea
+                        name="contact"
+                        id="contact"
+                        cols="30"
+                        rows="10"
+                        placeholder="문의내용을 입력해주세요."
+                ></textarea>
+                <p class="error" id="errorDisplay2"></p>
+                <section class="agree">
+                    <input
+                            type="checkbox"
+                            id="agreeCheckbox"
+                            name="agreeCheckbox"
+                            required
+                    />
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                    <button id="privacy" type="button">
+                        [개인정보취급방침 보기]
+                    </button>
+                    <button id="submitButton" type="submit" disabled>
+                        전 송
+                    </button>
+                </section>
+            </section>
+        </section>
+    </article>
+</th:block>
+</html>

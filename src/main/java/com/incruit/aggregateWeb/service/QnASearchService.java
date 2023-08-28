@@ -14,16 +14,17 @@ public class QnASearchService {
 
     private final QnASearchMapper qnaSearchMapper;
 
-    public String showQnAList(Model model, QnASearchDTO qnaDTO){
-        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaDTO);
-        model.addAttribute("list",list);
-
-        return "/search";
+    public List<QnASearchDTO> getQnAList(){
+        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList();
+        return list;
     }
 
-    public void setQnAList(Model model, QnASearchDTO qnaDTO){
-        List<QnASearchDTO> list = qnaSearchMapper.findQnASearchList(qnaDTO);
-        model.addAttribute("list",list);
+    public QnASearchDTO getQnA(int id){
+        return qnaSearchMapper.findQnAData(id);
+    }
+
+    public QnASearchDTO getMainPage(){
+        return qnaSearchMapper.findMainPageData();
     }
 
 }
