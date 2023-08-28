@@ -1,43 +1,3 @@
-/* 사이드 메뉴 */
-
-const menuButton = document.getElementById("menuButton");
-const closeButton = document.getElementById("closeButton");
-const sideMenu = document.getElementById("sideMenu");
-
-function searchData(value) {
-    const matchDataList = value
-        ? dataList.filter((label) => label.question.includes(value))
-        : [];
-
-    if (dataListVisible) {
-        showList(matchDataList, value, nowIndex);
-    }
-}
-
-menuButton.addEventListener("click", () => {
-  sideMenu.style.width = "50%";
-});
-
-closeButton.addEventListener("click", () => {
-  sideMenu.style.width = "0";
-});
-/* 사이드 메뉴 아코디언*/
-
-const accordionContents = document.querySelectorAll(".accordion-content");
-
-document.querySelectorAll("li").forEach((li, index) => {
-  li.addEventListener("click", () => {
-    if (accordionContents[index].style.display === "block") {
-      accordionContents[index].style.display = "none";
-    } else {
-      accordionContents.forEach((content) => {
-        content.style.display = "none";
-      });
-      accordionContents[index].style.display = "block";
-    }
-  });
-});
-
 /* 검색 기능 및 음성인식 */
 
 // 음성 인식 기능
@@ -93,7 +53,6 @@ searchBar.addEventListener("keyup", (event) => {
   }
 });
 
-// 검색 아이콘 클릭 이벤트 처리
 document.getElementById("searchIcon").addEventListener("click", performSearch);
 
 // 음성 인식 중 알림 표시 함수
@@ -196,6 +155,15 @@ $autoComplete.addEventListener("click", (event) => {
     }
 });
 
+function searchData(value) {
+    const matchDataList = value
+        ? dataList.filter((label) => label.question.includes(value))
+        : [];
+
+    if (dataListVisible) {
+        showList(matchDataList, value, nowIndex);
+    }
+}
 
 const showList = (data, value, nowIndex) => {
     const regex = new RegExp(`(${value})`, "g");

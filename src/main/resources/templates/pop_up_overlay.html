@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="popUpOverlayFragment">
+    <article id="popupOverlay" class="privacy-overlay">
+        <div class="popup-content">
+            <h2 class="popup-text">개인정보 수집 및 이용에 대한 법률</h2>
+            <br/>
+            <section>
+                <p class="main-law">
+                        <span class="sub-law">
+                            이용자는 귀사에 개인정보를 제출함에 따라 개인정보
+                            보호법 제15조 및 제17조에 따라 아래의 내용으로
+                            개인정보를 수집, 이용 및 제공하는데 동의합니다.
+                        </span>
+                </p>
+                <br/>
+                <hr/>
+                <br/>
+                <div class="law-num">
+                    1. 개인정보의 수집 및 이용에 관한 사항
+                </div>
+                <br/>
+                <span class="sub-law">
+                        수집하는 개인정보항목 : 성명, 전화번호, 이메일, 아이피
+                        등과 그 외 기재 내용일체 </span
+                ><br/>
+                <div class="law-num">2. 개인정보의 이용 목적</div>
+                <br/>
+                <span class="sub-law">
+                        수집된 개인정보는 '문의사항 관련 일체 사항' 목적 외의
+                        용도로는 사용하지 않습니다. </span
+                ><br/>
+                <div class="law-num">3. 개인정보의 보관 및 이용 기간</div>
+                <br/>
+                <span class="sub-law">
+                        이용자의 개인정보를 다음과 같이 보관하며, 수집, 이용 및
+                        제공 목적이 달성된 경우 [개인정보 보호법] 제 21조에 따라
+                        처리합니다. (이용자가 홈페이지를 유지하는 기간 동안
+                        개인정보를 보관하며 홈페이지를 삭제할 경우 즉시 파기됨)
+                    </span>
+            </section>
+            <br/>
+            <section>
+                <p class="law-num">저작권 관련 법률 사항</p>
+                <br/>
+                <span class="sub-law">
+                        “이용자”가 서비스 내에 게시한 게시물의 저작권은 해당
+                        게시물의 저작자에게 귀속되며 “이용자"의 게시물이
+                        "정보통신망법" 및 "저작권법"등 관련법에 위반되는 내용을
+                        포함하는 경우, 모든책임은 “이용자“에게있습니다.
+                    </span>
+            </section>
+            <br/>
+            <button id="close-popup">닫기</button>
+        </div>
+    </article>
+</th:block>
+</html>
