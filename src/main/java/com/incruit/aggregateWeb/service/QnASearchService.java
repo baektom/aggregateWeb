@@ -23,4 +23,8 @@ public class QnASearchService {
         return qnaSearchMapper.findQnAData(id);
     }
 
+    public QnASearchDTO getMainPage(){
+        return qnaSearchMapper.findMainPageData();
+    }
+
 }

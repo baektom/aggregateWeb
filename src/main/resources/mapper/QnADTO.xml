@@ -12,4 +12,8 @@
         select subject as question, MemoRem as answer from kiwonsale.tguardsub where guardSubIDX = #{id} AND guardIDX2 = 4232
     </select>
 
+    <select id="findMainPageData" resultType="QnASearchDTO">
+        select subject as question, MemoRem as answer from kiwonsale.tguardsub where guardSubIDX = 29345
+    </select>
+
 </mapper>
