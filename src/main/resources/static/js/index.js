@@ -53,8 +53,6 @@ searchBar.addEventListener("keyup", (event) => {
   }
 });
 
-document.getElementById("searchIcon").addEventListener("click", performSearch);
-
 // 음성 인식 중 알림 표시 함수
 const showVoiceNotification = (message) => {
   voiceNotification.textContent = message;
@@ -118,7 +116,6 @@ const $autoComplete = document.querySelector(".autocomplete");
 let nowIndex = 0;
 let dataListVisible = false;
 
-console.log(dataList);
 
 document.addEventListener("click", (event) => {
     if (!$search.contains(event.target)) {
