@@ -18,10 +18,7 @@
         <!-- AOS 라이브러리 -->
         <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script th:inline="javascript">
-            let dataList = [[${list}]]
-            let mainPage = [[${mainPage}]]
-        </script>
+        <th:block th:replace="includes/data :: dataFragment"></th:block>
     </head>
 </th:block>
 </html>

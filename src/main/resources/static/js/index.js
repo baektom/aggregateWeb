@@ -147,7 +147,7 @@ $autoComplete.addEventListener("click", (event) => {
         const selectedId = event.target.getAttribute("data-id");
 
         // 선택한 데이터를 이용하여 페이지 이동
-        const searchResultUrl = `/searchAnswer/${selectedId}`;
+        const searchResultUrl = `/help/${selectedId}`;
         window.location.href = searchResultUrl;
     }
 });

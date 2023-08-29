@@ -1,8 +1,8 @@
 package com.incruit.aggregateWeb.controller.advice;
 
 import com.incruit.aggregateWeb.controller.IndexController;
-import com.incruit.aggregateWeb.db.dto.QnASearchDTO;
-import com.incruit.aggregateWeb.service.QnASearchService;
+import com.incruit.aggregateWeb.db.dto.HelpDTO;
+import com.incruit.aggregateWeb.service.HelpService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,16 +13,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GlobalControllerAdvice {
 
-    private final QnASearchService qnaSearchService;
+    private final HelpService helpService;
 
-    @ModelAttribute("list")
-    public List<QnASearchDTO> addCommonData1() {
-        return qnaSearchService.getQnAList();
+    @ModelAttribute("helpList")
+    public List<HelpDTO> addHelpList() {
+        return helpService.getHelpList();
     }
 
-    @ModelAttribute("mainPage")
-    public QnASearchDTO addCommonData2() {
-        return qnaSearchService.getMainPage();
+    @ModelAttribute("headerView")
+    public HelpDTO addHeaderView() {
+        return helpService.getHeadView();
     }
 
 }
