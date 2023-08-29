@@ -13,8 +13,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan("com.incruit.aggregateWeb.db.mapper")
-public class DBconfig {
-
+public class DBConfig {
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
@@ -35,11 +34,4 @@ public class DBconfig {
 
         return sqlSessionFactory;
     }
-
-    //왜 사용했는지 물어 볼 것.
-    /*@Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }*/
-
 }

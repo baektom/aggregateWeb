@@ -114,18 +114,21 @@ mark {
     justify-content: space-between;
 }
 .banner img {
-    width: 30%;
+    width: 20%;
     margin-bottom: 15px;
 }
 
 .banner h2 {
     font-size: 2.5rem;
     font-weight: bold;
+    white-space: nowrap;
+
 }
 
 .banner h3 {
     font-size: 1.8rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .banner div {
@@ -137,11 +140,21 @@ mark {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    height: 33vh;
+    height: 200px;
+    padding: 30px 0;
+    transition: 0.5s ease-in-out;
+}
+
+.banner div:hover{
+    background: #84b8e8;
 }
 
 .bannerBottom2 {
     display: none;
+}
+
+.bannerBottom2 h2{
+    white-space: nowrap;
 }
 
 /* 컨테이너 및 메뉴 버튼 스타일 */
@@ -249,6 +262,54 @@ mark {
     font-size: 1.3rem;
 }
 
+/* 음성 인식 알림 스타일 */
+.voice-notification {
+    display: none;
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dot-pulse {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #007bff;
+    border-radius: 50%;
+    animation: pulse 1s infinite;
+    margin-right: 8px;
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
 /* 모바일 스타일 */
 @media (max-width: 424px) {
     header {
@@ -285,11 +346,11 @@ mark {
     }
 
     .banner h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .banner h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .bannerBottom {
@@ -310,12 +371,22 @@ mark {
         width: 10%;
     }
     .bannerBottom2 h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: bold;
     }
 
     .popup-content {
         width: 350px;
+    }
+
+    .voice-notification {
+        white-space: nowrap;
+        font-size: 18px;
+        top: 40%;
+    }
+    .dot-pulse {
+        width: 10px;
+        height: 10px;
     }
 }
 
@@ -421,7 +492,11 @@ mark {
     }
 
     .banner div {
-        height: 22vh;
+        height: 190px;
+    }
+
+    .banner img{
+        width: 35%;
     }
 
     /* 팝업설정 */
@@ -434,17 +509,26 @@ mark {
     .search input::placeholder {
         font-size: 1.1rem;
     }
-
 }
 
 /* 태블릿 스타일 */
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* 태블릿 화면 크기에 대한 스타일 설정 */
+
+    .banner h2{
+        font-size: 2rem;
+    }
+    .banner h3{
+        font-size: 1.5rem;
+    }
+
+    .banner img{
+        width: 30%;
+    }
+
     .popup-content {
         width: 800px;
     }
     .search input::placeholder {
         font-size: 1.2rem;
     }
-
 }

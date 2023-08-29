@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <link rel="stylesheet" href="/css/help_answer.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!-- 맨 위 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!-- 맨 아래 아이콘 -->
+    <script th:inline="javascript">
+        let QAData = [[${data}]]
+    </script>
+</head>
+<body>
+<div class="faq-item">
+    <h2 id="faqTitle"></h2>
+    <div id="faqContent"></div>
+
+    <div class="scroll-buttons-container">
+        <button class="scroll-top-button" onclick="scrollToTop()">
+            <span class="material-symbols-outlined">expand_less</span>
+        </button>
+        <button class="scroll-bottom-button" onclick="scrollToBottom()">
+            <span class="material-symbols-outlined">expand_more</span>
+        </button>
+    </div>
+</div>
+
+
+
+<script src="/js/help_answer.js"></script>
+</body>
+</html>
