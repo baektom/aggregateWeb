@@ -7,3 +7,18 @@ const faqContent = document.getElementById("faqContent");
 
 faqTitle.textContent = dbTitle;
 faqContent.innerHTML = dbAnswer;
+
+// 맨 위로 보내는 아이콘 JS 코드
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}
+
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+    });
+}

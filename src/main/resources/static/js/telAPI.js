@@ -3,7 +3,8 @@ window.onload = function () {
     const nameInput = document.getElementById("nameInput");
     const contactInput = document.getElementById("contactInput");
     const submitButton = document.getElementById("submitButton");
-    const errorDisplay = document.getElementById("errorDisplay");
+    const errorDisplay = document.querySelector('.error');
+    //document.getElementById("errorDisplay");
     const agreeCheckbox = document.getElementById("agreeCheckbox");
     const companyInput = document.getElementById("companyInput");
     const contactTextarea = document.getElementById("contact");

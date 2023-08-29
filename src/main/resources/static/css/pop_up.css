@@ -4,11 +4,6 @@ h2.title {
     font-size: 120px;
     font-weight: bolder;
 }
-
-.backTap{
-    cursor: pointer;
-}
-
 .popup {
     display: none;
 }
@@ -22,7 +17,6 @@ h2.title {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
-
 .main-popup {
     padding: 20px;
     border-radius: 5px;
@@ -94,7 +88,6 @@ textarea {
 input[type="checkbox"] {
     width: 30px;
     height: 30px;
-    cursor: pointer;
 }
 #submitButton {
     font-size: 50px;
@@ -104,13 +97,11 @@ input[type="checkbox"] {
     padding-left: 50px;
     padding-right: 50px;
     background-color: #87cefa;
-    cursor: pointer;
 }
 #privacy {
     border: none;
     background-color: #ffffff;
     font-size: 25px;
-    cursor: pointer;
 }
 #companyInput,
 #emailInput,
@@ -170,7 +161,6 @@ input[type="checkbox"] {
     width: 100%;
     font-weight: bold;
     font-size: 30px;
-    cursor: pointer;
 }
 
 @media (max-width: 424px) {

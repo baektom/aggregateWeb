@@ -4,27 +4,35 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .faq-item {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    margin: 20px auto;
     max-width: 600px;
+    margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
 }
 
 /* 제목 스타일 */
 #faqTitle {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 /* 답변 스타일 */
 #faqContent {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
     margin-top: 10px;
 }
 
@@ -32,5 +40,38 @@ body {
 #faqContent img {
     max-width: 100%;
     height: auto;
-    margin-top: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-buttons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.scroll-top-button, .scroll-bottom-button {
+    background-color:transparent;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 2px 0; /* 버튼 간격 조절 */
+}
+
+.scroll-top-button span, .scroll-bottom-button span {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.scroll-top-button:hover, .scroll-bottom-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* 배경 살짝 어둡게 만듦 */
+    color: #333; /* 글자 색을 어둡게 변경 */
 }
