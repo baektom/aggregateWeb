@@ -16,8 +16,12 @@ public class HelpAnswerController {
     @GetMapping("/help/{id}")
     public String renderHelpForm(@PathVariable int id, Model model){
         HelpDTO helpDTO = helpService.getHelp(id);
-        model.addAttribute("data",helpDTO);
 
+        if(helpDTO == null){
+            return "error/4xx";
+        }
+
+        model.addAttribute("data",helpDTO);
         return "help_answer";
     }
 
