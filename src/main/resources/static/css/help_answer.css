@@ -14,7 +14,7 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -74,4 +74,32 @@ body {
 .scroll-top-button:hover, .scroll-bottom-button:hover {
     background-color: rgba(0, 0, 0, 0.1); /* 배경 살짝 어둡게 만듦 */
     color: #333; /* 글자 색을 어둡게 변경 */
+}
+
+/* 모바일 스타일 */
+@media (max-width: 424px) {
+    .faq-item {
+        max-width: 400px;
+    }
+}
+
+/* 모바일 스타일 */
+@media (min-width: 425px) and (max-width: 550px) {
+    .faq-item {
+        max-width: 450px;
+    }
+}
+
+/* 모바일 스타일 */
+@media (min-width: 551px) and (max-width: 768px) {
+    .faq-item {
+        max-width: 500px;
+    }
+}
+
+/* 태블릿 스타일 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .faq-item {
+        max-width: 700px;
+    }
 }
