@@ -80,6 +80,9 @@ function navigateTo(page) {
     else if (page === "홍보페이지") {
         window.location.href = "https://m.worknsales.com";
     }
+    else if (page === "구축사례") {
+        window.location.href = "/help/29386";
+    }
 }
 
 
