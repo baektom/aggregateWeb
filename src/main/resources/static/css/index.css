@@ -325,8 +325,13 @@ mark {
     }
 
     .search input {
-        width: 170px;
+        width: 250px;
         height: 5vh;
+    }
+
+    .autocomplete {
+        width: 250px;
+        font-size: 16px;
     }
 
     .search input::placeholder {
@@ -405,8 +410,13 @@ mark {
     }
 
     .search input {
-        width: 170px;
-        height: 6vh;
+        width: 300px;
+        height: 5vh;
+    }
+
+    .autocomplete {
+        width: 300px;
+        font-size: 16px;
     }
 
     .search input::placeholder {
@@ -457,7 +467,12 @@ mark {
 
     /* 팝업설정 */
     .search input {
-        width: 150px;
+        width: 300px;;
+    }
+
+    .autocomplete {
+        width: 300px;
+        font-size: 16px;
     }
     .search input::placeholder {
         font-size: 14px;
@@ -481,6 +496,16 @@ mark {
 
     .search input {
         width: 300px;
+        height: 5vh;
+    }
+
+    .autocomplete {
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .autocomplete {
+        font-size: 16px;
     }
 
     .banner h2 {
@@ -503,6 +528,11 @@ mark {
     .search input {
         width: 300px;
     }
+
+    .autocomplete {
+        width: 300px;
+        font-size: 16px;
+    }
     .popup-content {
         width: 600px;
     }
@@ -513,6 +543,16 @@ mark {
 
 /* 태블릿 스타일 */
 @media (min-width: 769px) and (max-width: 1024px) {
+
+    .search input {
+        width: 600px;
+        height: 5vh;
+    }
+
+    .autocomplete {
+        width: 600px;
+        font-size: 18px;
+    }
 
     .banner h2{
         font-size: 2rem;
