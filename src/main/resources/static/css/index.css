@@ -17,6 +17,8 @@ body {
 header {
     width: 100%;
     height: 12vh;
+    border-bottom: 1px solid black;
+    margin: auto;
 }
 
 .inner {
@@ -92,8 +94,9 @@ mark {
 
 /* 메인 스타일 */
 .wrapper {
-    width: 100%;
+    width: 80%;
     margin-bottom: 30px;
+    margin: 0 auto;
 }
 
 .wrapper img {
@@ -107,9 +110,10 @@ mark {
 /* 배너 스타일 */
 .banner {
     display: flex;
-    width: 100%;
+    width: 80%;
     gap: 10px;
-    margin: 5px 0 8px 0;
+    margin: 0 auto;
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -145,7 +149,7 @@ mark {
     transition: 0.5s ease-in-out;
 }
 
-.banner div:hover{
+.banner div:hover {
     background: #84b8e8;
 }
 
@@ -153,88 +157,8 @@ mark {
     display: none;
 }
 
-.bannerBottom2 h2{
+.bannerBottom2 h2 {
     white-space: nowrap;
-}
-
-/* 컨테이너 및 메뉴 버튼 스타일 */
-.container {
-    display: none;
-}
-
-.menu-button {
-    display: flex;
-    align-items: center;
-    font-size: 54px;
-}
-
-.close-button {
-    font-size: 60px;
-    display: flex;
-    justify-content: end;
-    padding: 20px 5%;
-}
-
-.close-button span {
-    cursor: pointer;
-}
-
-.menu-button span {
-    font-size: 45px;
-    cursor: pointer;
-}
-
-/* 사이드 메뉴 스타일 */
-.side-menu {
-    width: 0;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    right: 0;
-    overflow-x: hidden;
-}
-
-.side-menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.side-menu ul li {
-    cursor: pointer;
-    padding: 10px 60px 10px 20px;
-    border-bottom: 1px solid #555;
-}
-.side-menu ul li p {
-    background: url(/images/arrowTop.png) no-repeat right;
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.side-menu ul li a {
-    font-size: 26px;
-    line-height: 40px;
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
-
-.side-menu ul li a::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    right: 10px;
-    font-size: 14px;
-}
-
-.accordion-content {
-    display: none;
-    padding: 15px;
-    background-color: #555;
-    color: #fff;
 }
 
 /* 스와이퍼 버튼 스타일 */
@@ -313,6 +237,7 @@ mark {
 /* 모바일 스타일 */
 @media (max-width: 424px) {
     header {
+        width: 100%;
         height: 8vh;
     }
 
@@ -372,9 +297,11 @@ mark {
         gap: 15px;
         margin-bottom: 10px;
     }
+
     .bannerBottom2 img {
         width: 10%;
     }
+
     .bannerBottom2 h2 {
         font-size: 1.2rem;
         font-weight: bold;
@@ -398,6 +325,7 @@ mark {
 /* 모바일 스타일 */
 @media (min-width: 425px) and (max-width: 550px) {
     header {
+        width: 100%;
         height: 10vh;
     }
 
@@ -421,6 +349,10 @@ mark {
 
     .search input::placeholder {
         font-size: 14px;
+    }
+
+    .banner {
+        width: 100%
     }
 
     .banner div {
@@ -457,9 +389,11 @@ mark {
         gap: 20px;
         margin-bottom: 10px;
     }
+
     .bannerBottom2 img {
         width: 13%;
     }
+
     .bannerBottom2 h2 {
         font-size: 1.8rem;
         font-weight: bold;
@@ -490,6 +424,10 @@ mark {
 
 /* 모바일 스타일 */
 @media (min-width: 551px) and (max-width: 768px) {
+    header {
+        width: 100%;
+        height: 10vh;
+    }
     .logo img {
         height: 8vh;
     }
@@ -506,6 +444,10 @@ mark {
 
     .autocomplete {
         font-size: 16px;
+    }
+
+    .banner {
+        width: 100%
     }
 
     .banner h2 {
@@ -543,6 +485,10 @@ mark {
 
 /* 태블릿 스타일 */
 @media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        width: 100%;
+        height: 10vh;
+    }
 
     .search input {
         width: 600px;
@@ -552,6 +498,10 @@ mark {
     .autocomplete {
         width: 600px;
         font-size: 18px;
+    }
+
+    .banner {
+        width: 100%
     }
 
     .banner h2{

@@ -1,4 +1,3 @@
-/* 검색 기능 및 음성인식 */
 
 // 음성 인식 기능
 const searchBar = document.getElementById("searchBar");
@@ -76,37 +75,78 @@ function navigateTo(page) {
         window.location.href = "/";
     } else if (page === "체험하기") {
         window.location.href = "https://m.worknsales.com";
-    }
-    else if (page === "홍보페이지") {
+    } else if (page === "홍보페이지") {
         window.location.href = "https://m.worknsales.com";
-    }
-    else if (page === "구축사례") {
+    } else if (page === "구축사례") {
         window.location.href = "/help/29386";
     }
 }
 
-
+// Swiper 초기화
 const swiper = new Swiper(".swiper", {
-    loop: false, // 반복
-
-    effect: "fade",
-
-    // If we need pagination
-    pagination: {
-        el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
-    autoplay: {
-        // delay: 3000, // 3초마다 페이지 이동
-        disableOnInteraction: false,
-    },
+  loop: false,
+  effect: "fade",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false, // 이 부분을 false로 설정합니다.
+    stopOnLastSlide: true,
+  },
 });
+
+const dbNewHtml = mainPage.answer;
+const dbMainPage = document.getElementById("mainContent");
+
+// dbNewHtml이 비어있지 않을 경우에만 HTML을 삽입하도록
+if (dbNewHtml) {
+  dbMainPage.innerHTML = dbNewHtml;
+  // mainPage를 초기에 숨깁니다.
+  dbMainPage.style.display = "none";
+}
+
+// 슬라이드 변경 시 처리
+swiper.on("slideChange", () => {
+  // 현재 활성화된 슬라이드의 인덱스를 가져옵니다.
+  const currentIndex = swiper.activeIndex;
+
+  // 슬라이드 이미지 개수를 가져옵니다.
+  const totalSlides = swiper.slides.length;
+
+  // 모든 슬라이드 이미지를 숨깁니다.
+  for (let i = 0; i < totalSlides; i++) {
+    swiper.slides[i].querySelector('img').style.display = "none";
+  }
+
+  // 현재 슬라이드 이미지만 표시합니다.
+  swiper.slides[currentIndex].querySelector('img').style.display = "block";
+
+  // 슬라이드 변경 후 mainPage가 뜨면 슬라이드 이미지를 숨기고 mainPage를 보여줍니다.
+  if (currentIndex === totalSlides - 1) {
+    // 슬라이드 이미지가 모두 보여진 후 mainPage를 보여줍니다.
+    setTimeout(() => {
+      dbMainPage.style.display = "block";
+    }, 0);
+    // mainPage를 1000px로 보여줍니다.
+    dbMainPage.style.display = "block";
+    dbMainPage.style.width = "55%";
+    dbMainPage.style.margin = "auto";
+  } else {
+    // 슬라이드 이미지가 보일 때는 mainPage를 숨깁니다.
+    dbMainPage.style.display = "none";
+  }
+});
+
+// 슬라이드가 로드될 때 초기 상태 설정
+swiper.on("init", () => {
+  swiper.slides[0].querySelector('img').style.display = "block";
+});
+
+// 슬라이드 초기화
+swiper.init();
+
 // AOS 애니메이션
 // AOS.init();
 
