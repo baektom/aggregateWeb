@@ -139,6 +139,27 @@ swiper.on("slideChange", () => {
   }
 });
 
+//  // 미디어 쿼리를 사용하여 mainPage의 스타일을 동적으로 변경합니다.
+//  if (currentIndex === totalSlides - 1) {
+//    // 슬라이드 이미지가 모두 보여진 후 mainPage를 보여줍니다.
+//    setTimeout(() => {
+//      dbMainPage.style.display = "block";
+//
+//      // 미디어 쿼리를 적용하여 mainPage의 width를 변경합니다.
+//      if (window.matchMedia("(max-width: 768px)").matches) {
+//        dbMainPage.style.width = "100%"; // 스마트폰 화면 크기에 따라 조정
+//      } else {
+//        dbMainPage.style.width = "1000px"; // 데스크톱 화면 크기에 따라 조정
+//      }
+//
+//      dbMainPage.style.margin = "auto";
+//    }, 0);
+//  } else {
+//    // 슬라이드 이미지가 보일 때는 mainPage를 숨깁니다.
+//    dbMainPage.style.display = "none";
+//  }
+//});
+
 // 슬라이드가 로드될 때 초기 상태 설정
 swiper.on("init", () => {
   swiper.slides[0].querySelector('img').style.display = "block";

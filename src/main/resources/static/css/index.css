@@ -267,13 +267,12 @@ mark {
         width: 100%;
     }
 
-    .swiper {
-        width: 80%;
+    .mainPage {
+        width: 100%;
     }
 
-    .mainPage {
-        max-width: 424px;
-        width: 100%;
+    #mainContent {
+        width: 100% !important;
     }
 
     .banner {
@@ -372,13 +371,12 @@ mark {
         width: 100%;
     }
 
-    .swiper {
-        width: 80%;
+    .mainPage {
+        width: 100%;
     }
 
-    .mainPage {
-        max-width: 550px;
-        width: 100%;
+    #mainContent {
+        width: 100% !important;
     }
 
     .banner {
@@ -480,13 +478,12 @@ mark {
         width: 100%;
     }
 
-    .swiper {
-        width: 80%;
+    .mainPage {
+        width: 100%;
     }
 
-    .mainPage {
-        max-width: 768px;
-        width: 100%;
+    #mainContent {
+        width: 100% !important;
     }
 
     .banner {
@@ -547,12 +544,7 @@ mark {
         width: 100%;
     }
 
-    .swiper {
-        width: 80%;
-    }
-
     .mainPage {
-        max-width: 1024px;
         width: 100%;
     }
 
