@@ -263,6 +263,23 @@ mark {
         font-size: 0.8rem;
     }
 
+    .wrapper {
+        width: 100%;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .mainPage {
+        max-width: 424px;
+        width: 100%;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
     .banner div {
         height: 18vh;
     }
@@ -351,8 +368,21 @@ mark {
         font-size: 14px;
     }
 
+    .wrapper {
+        width: 100%;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .mainPage {
+        max-width: 550px;
+        width: 100%;
+    }
+
     .banner {
-        width: 100%
+        width: 100%;
     }
 
     .banner div {
@@ -446,8 +476,21 @@ mark {
         font-size: 16px;
     }
 
+    .wrapper {
+        width: 100%;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .mainPage {
+        max-width: 768px;
+        width: 100%;
+    }
+
     .banner {
-        width: 100%
+        width: 100%;
     }
 
     .banner h2 {
@@ -500,8 +543,21 @@ mark {
         font-size: 18px;
     }
 
+    .wrapper {
+        width: 100%;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+
+    .mainPage {
+        max-width: 1024px;
+        width: 100%;
+    }
+
     .banner {
-        width: 100%
+        width: 100%;
     }
 
     .banner h2{

@@ -35,7 +35,7 @@ a{
 
 .footerWrapper{
     border-bottom: 1px solid #fff;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: flex;
 }
 
